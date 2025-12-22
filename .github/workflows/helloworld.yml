@@ -9,4 +9,4 @@ jobs:
       - name: step2
         run: mkdir project1
       - name: step3
-        run: grep "hello world"
+        run: echo "wellcome to github"
