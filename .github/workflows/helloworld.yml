@@ -29,4 +29,9 @@ jobs:
       - name: Display the message
         run: echo "successfully connected to vm"
       - name: clone the project
-        run: git clone https://github.com/muzammil-hue/Node-Express-Basic-Application.git 
+        run: git clone https://github.com/muzammil-hue/Node-Express-Basic-Application.git
+      - name: install dependencies
+        run: npm install
+
+      - name: build the project
+        run: npm run build
