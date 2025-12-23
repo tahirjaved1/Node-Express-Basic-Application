@@ -26,7 +26,7 @@ jobs:
       - name: connect to vm
         run: ssh -i ~/.ssh/id_rsa azureuser@20.48.186.93 
 
-      - name: Display the message
+      - name: Display the messages
         run: uname -a
       - name: clone the project
         run: git clone https://github.com/muzammil-hue/Node-Express-Basic-Application.git
