@@ -25,7 +25,7 @@ jobs:
 
       - name: connect to vm
         run: |
-         ssh -i ~/.ssh/id_rsa azureuser@20.48.186.93 "ls -la /opt"
+         ssh -i ~/.ssh/id_rsa azureuser@20.48.186.93 << 'EOF'
          echo "It is connect to SSH VM"
          uname -a
          echo "This is SSH machine"
@@ -34,7 +34,7 @@ jobs:
          ls /opt
          cd Node-Express-Basic-Application/
          ls
-        
+         EOF                 
       # - name: clone the project
       #   run: git clone https://github.com/muzammil-hue/Node-Express-Basic-Application.git
       # - name: install dependencies
