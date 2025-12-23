@@ -11,6 +11,12 @@ jobs:
       - name: checked code
         uses: actions/checkout@v3
 
+      - name: Display the messages
+        run: uname -a
+
+      - name: Testing the Agent Machine
+        run: echo "This is Github runner"
+
       - name: create directory
         run: mkdir -p ~/.ssh
 
@@ -28,6 +34,10 @@ jobs:
 
       - name: Display the messages
         run: uname -a
+
+      - name: Testing the Agent Machine
+        run: echo "This should not be Github runner."
+        
       - name: clone the project
         run: git clone https://github.com/muzammil-hue/Node-Express-Basic-Application.git
       - name: install dependencies
