@@ -25,7 +25,7 @@ jobs:
 
       - name: connect to vm
         run: |
-         ssh -i ~/.ssh/id_rsa azureuser@20.48.186.93 
+         ssh -i ~/.ssh/id_rsa azureuser@20.48.186.93 "ls -la /opt"
          echo "It is connect to SSH VM"
          uname -a
          echo "This is SSH machine"
