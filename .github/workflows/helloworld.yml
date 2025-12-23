@@ -6,18 +6,25 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     env:
-     ssh-private-key: ${{ secrets.ssh}}
+     SSH_PRIVATE_KEY: ${{ secrets.ssh }}
     steps:
       - name: checked code
         uses: actions/checkout@v3
+
       - name: create directory
         run: mkdir -p ~/.ssh
+
       - name: Move the private key into the directory
         run: echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+
       - name: assign the permission to this directory
-        run: chmod 666 ~/.ssh/id_rsa
+        run: chmod 600 ~/.ssh/id_rsa
+
+      - name: add host to known hosts
+        run: ssh-keyscan -H 20.48.186.93 >> ~/.ssh/known_hosts
 
       - name: connect to vm
-        run: ssh -i ~/.ssh/id_rsa azureuser@20.48.186.93
+        run: ssh -i ~/.ssh/id_rsa azureuser@20.48.186.93 "echo connected"
+
       - name: Display the message
         run: echo "successfully connected to vm"
